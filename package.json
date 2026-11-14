@@ -1,0 +1,24 @@
+{
+  "name": "savvy-signature-redesign",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Savvy Signature homepage redesign (sections 1 to 3) with two design directions: A Growth Engine and B Editorial.",
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "node scripts/fetch-brand.mjs",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/geist-mono": "5.3.0",
+    "@fontsource/geist-sans": "5.3.0",
+    "@fontsource/hanken-grotesk": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/newsreader": "5.3.0",
+    "@fontsource/schibsted-grotesk": "5.3.0"
+  },
+  "devDependencies": {
+    "vite": "6.3.5"
+  }
+}

@@ -1,0 +1,88 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; min-height: 100vh; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+.no-scroll { overflow: hidden; }
+
+/* Only the active variant renders */
+.variant { display: none; }
+[data-variant="a"] .variant-a, [data-variant="b"] .variant-b { display: block; }
+[data-variant="a"] body { background: var(--a-color-bg-canvas); color: var(--a-color-text-primary); font-family: var(--a-font-body); }
+[data-variant="b"] body { background: var(--b-color-bg-canvas); color: var(--b-color-text-primary); font-family: var(--b-font-body); }
+
+.skip-link { position: absolute; left: 16px; top: -48px; z-index: 100; padding: 10px 14px; background: #111; color: #fff; border-radius: 4px; }
+.skip-link:focus { top: 12px; }
+:focus-visible { outline: 3px solid #285771; outline-offset: 3px; }
+
+/* ---------- Variant switch ---------- */
+.variant-switch {
+  position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 60;
+  display: flex; gap: 4px; padding: 4px; border-radius: 999px;
+  background: rgba(17, 30, 38, 0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 12px 32px -8px rgba(17, 30, 38, 0.45);
+  font: 500 12px/1 "Geist Mono", "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.variant-switch button {
+  display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px 10px 10px; border-radius: 999px;
+  color: #A9B8BF; transition: background var(--motion-base) var(--ease), color var(--motion-base) var(--ease);
+}
+.variant-switch button:hover { color: #FFFFFF; }
+.variant-switch button[aria-checked="true"] { background: #FFFFFF; color: #111E26; }
+.variant-switch__key {
+  display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 999px;
+  border: 1px solid currentColor; font-size: 11px;
+}
+.variant-switch button[aria-checked="true"] .variant-switch__key { background: #285771; border-color: #285771; color: #fff; }
+
+/* ---------- Menu sheet (shared) ---------- */
+.menu-sheet { position: fixed; inset: 0; z-index: 80; background: rgba(10, 22, 28, 0.35); opacity: 0; transition: opacity var(--motion-base) var(--ease); }
+.menu-sheet.is-open { opacity: 1; }
+.menu-sheet__panel {
+  position: absolute; inset: 0 0 0 auto; width: min(420px, 100%); padding: 72px 28px 32px; overflow-y: auto;
+  transform: translateX(24px); transition: transform var(--motion-base) var(--ease-out);
+}
+.menu-sheet.is-open .menu-sheet__panel { transform: none; }
+.menu-sheet__close { position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; font-size: 28px; line-height: 1; }
+.menu-sheet nav { display: grid; gap: 4px; }
+.menu-sheet nav a { padding: 14px 4px; border-bottom: 1px solid; font-size: 20px; }
+.menu-sheet__cta { margin-top: 16px; border-bottom: 0 !important; }
+[data-variant="a"] .menu-sheet__panel { background: var(--a-color-bg-raised); color: var(--a-color-text-primary); font-family: var(--a-font-display); }
+[data-variant="a"] .menu-sheet nav a { border-color: var(--a-color-border-default); }
+[data-variant="a"] .menu-sheet__cta { background: var(--a-color-action-primary-bg); color: var(--a-color-action-primary-fg); text-align: center; font: 500 13px/1 var(--a-font-mono) !important; text-transform: uppercase; letter-spacing: .04em; padding: 18px !important; }
+[data-variant="b"] .menu-sheet__panel { background: var(--b-color-bg-canvas); color: var(--b-color-text-primary); font-family: var(--b-font-display); }
+[data-variant="b"] .menu-sheet nav a { border-color: var(--b-color-border-default); font-size: 26px; }
+[data-variant="b"] .menu-sheet__cta { border: 1px solid var(--b-color-border-strong) !important; text-align: center; font: 500 13px/1 var(--b-font-mono) !important; text-transform: uppercase; letter-spacing: .06em; padding: 18px !important; }
+
+/* ---------- Logo grids ---------- */
+.logo-grid li { display: flex; align-items: center; justify-content: center; }
+.logo-grid img { max-height: 44px; width: auto; max-width: 70%; object-fit: contain; filter: grayscale(1); opacity: .75; mix-blend-mode: multiply; transition: filter var(--motion-base) var(--ease), opacity var(--motion-base) var(--ease); }
+.logo-grid li:hover img { filter: none; opacity: 1; }
+.logo-fallback { font: 500 12px/1.2 "Geist Mono", "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .06em; text-align: center; opacity: .6; padding: 0 8px; }
+.brand-mark { border-radius: 50%; }
+.brand-mark--fallback { visibility: hidden; }
+
+/* ---------- Grain (noise) ---------- */
+.grain {
+  position: absolute; inset: 0; pointer-events: none; opacity: .16; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- Reveal ---------- */
+[data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out); }
+[data-reveal].is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  [data-reveal] { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* Keep the floating switch from covering the last content */
+body { padding-bottom: 88px; }
+@media (max-width: 767px) {
+  .variant-switch { bottom: 12px; font-size: 11px; }
+  .variant-switch button { padding: 8px 12px 8px 8px; }
+}

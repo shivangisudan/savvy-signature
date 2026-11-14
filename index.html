@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en" data-variant="a">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Savvy Signature · Homepage redesign</title>
+  <meta name="description" content="Savvy Signature homepage redesign: sections 1 to 3 in two directions, A Growth Engine and B Editorial." />
+  <link rel="icon" href="/brand/s-mark.png" />
+  <script>
+    // Pick the variant before first paint: ?v=a|b, then last choice, then A.
+    (function () {
+      var q = new URLSearchParams(location.search).get('v');
+      var saved = null; try { saved = localStorage.getItem('savvy-variant'); } catch (e) {}
+      var v = (q === 'a' || q === 'b') ? q : (saved === 'a' || saved === 'b') ? saved : 'a';
+      document.documentElement.setAttribute('data-variant', v);
+    })();
+  </script>
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- =====================================================================
+       VARIANT A · GROWTH ENGINE
+       ===================================================================== -->
+  <div class="variant variant-a" data-for="a">
+    <header class="a-nav" data-sticky>
+      <div class="a-nav__bar">
+        <a class="a-brand" href="/" aria-label="Savvy Signature India, home">
+          <img class="brand-mark" src="/brand/s-mark.png" alt="" width="32" height="32" />
+          <span class="a-brand__words"><span class="a-brand__name">Savvy Signature</span><span class="a-brand__country">India</span></span>
+        </a>
+        <nav class="a-nav__links" aria-label="Primary">
+          <a href="#" aria-current="page">Portfolio</a>
+          <a href="#">Leadership</a>
+          <button class="nav-dropdown" type="button" aria-expanded="false" aria-controls="a-digital-menu">Digital <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 4l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button>
+          <a href="#">Beyond Digital</a>
+          <a href="https://savvysignatureindia.com/integrations/">Savvy Software</a>
+          <a href="#">Industries</a>
+          <a href="#">Careers</a>
+          <div class="a-dropdown" id="a-digital-menu" hidden>
+            <a href="#">Digital services</a>
+          </div>
+        </nav>
+        <div class="a-nav__actions">
+          <a class="a-health" href="#"><span class="live-dot" aria-hidden="true"></span>Digital Health Check</a>
+          <a class="a-hello" href="#">Say Hello <span aria-hidden="true">→</span></a>
+          <button class="a-menu-btn menu-toggle" type="button" aria-expanded="false" aria-controls="menu-sheet">
+            <svg width="16" height="10" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 1h16M0 9h16" stroke="currentColor" stroke-width="1.5"/></svg>Menu
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="a-main">
+      <!-- S1 · Hero -->
+      <section class="a-hero" aria-labelledby="a-hero-title">
+        <div class="a-ruled" aria-hidden="true"></div>
+        <span class="a-tag a-tag--neutral" data-reveal>India</span>
+        <h1 id="a-hero-title" class="a-display" data-reveal>
+          <span class="a-display__ink">We Don’t Just Market Your Business.</span>
+          <span class="a-display__accent">We Grow It.</span>
+        </h1>
+        <p class="a-body-l a-hero__body" data-reveal>Built on Australian accountability standards. Deployed for India’s fastest-growing businesses. We connect your marketing spend directly to revenue, not impressions, not reports. Actual growth.</p>
+        <div class="a-ctas" data-reveal>
+          <a class="a-btn a-btn--primary" href="#">Book your free growth audit <span aria-hidden="true">→</span></a>
+          <a class="a-btn a-btn--secondary" href="#a-software">See how we work <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="a-ticker logo-grid" aria-label="Partners and certifications" data-reveal>
+          <li><img src="/brand/partners/google-partner.png" alt="Google Partner" /></li>
+          <li><img src="/brand/partners/facebook-business-partner.png" alt="Facebook Business Partner" /></li>
+          <li><img src="/brand/partners/microsoft-certified.jpg" alt="Microsoft Certified" /></li>
+          <li><img src="/brand/partners/shopify-partner.png" alt="Shopify Partner" /></li>
+          <li><img src="/brand/partners/certified-marketing-expert.jpg" alt="Certified Marketing Expert" /></li>
+          <li><img src="/brand/clients/shree-mahalakshmi-sweets.png" alt="Shree Mahalakshmi Sweets" /></li>
+        </ul>
+        <figure class="a-illustration" data-reveal>
+          <div id="a-iso" class="a-iso" role="img" aria-label="Ad spend, WhatsApp follow-ups and pipeline flow into Savvy Software, which turns them into revenue."></div>
+          <figcaption class="a-flow-legend">
+            <span class="a-tag a-tag--neutral">Ad spend</span>
+            <span class="a-tag a-tag--neutral">WhatsApp follow-ups</span>
+            <span class="a-tag a-tag--neutral">Pipeline</span>
+            <span class="a-arrow" aria-hidden="true">→</span>
+            <span class="a-tag a-tag--live"><span class="live-dot" aria-hidden="true"></span>Savvy Software</span>
+            <span class="a-arrow" aria-hidden="true">→</span>
+            <span class="a-tag a-tag--accent">Revenue</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- S2 · Savvy Software (Dark mode band) -->
+      <section id="a-software" class="a-software a-mode-dark" aria-labelledby="a-sw-title">
+        <span class="a-tag a-tag--neutral" data-reveal>Savvy Software</span>
+        <div class="a-sw__header" data-reveal>
+          <h2 id="a-sw-title" class="a-sw__title">
+            <span class="a-display-l">Savvy Software</span>
+            <span class="a-display-m a-text-accent">the growth engine every client gets</span>
+          </h2>
+          <p class="a-body-l a-text-secondary">Most agencies give you a PDF report at the end of the month. We give you a live dashboard connected to your pipeline, WhatsApp follow-ups, ad spend, and revenue.</p>
+        </div>
+        <div class="a-toggle" role="tablist" aria-label="Compare" data-reveal>
+          <button role="tab" aria-selected="false" data-mode="without">◇ Without Savvy</button>
+          <button role="tab" aria-selected="true" data-mode="with">● With Savvy</button>
+        </div>
+        <div class="a-stage" data-state="with" data-reveal>
+          <div class="a-stage__dash" data-dashboard></div>
+          <ul class="a-features">
+            <li class="a-feature a-feature--active"><span class="a-feature__icon" data-icon="revenue"></span>Live revenue attribution dashboard</li>
+            <li class="a-feature"><span class="a-feature__icon" data-icon="whatsapp"></span>WhatsApp automation (leads followed up in 90 seconds)</li>
+            <li class="a-feature"><span class="a-feature__icon" data-icon="pipeline"></span>CRM pipeline management</li>
+            <li class="a-feature"><span class="a-feature__icon" data-icon="channels"></span>Campaign performance by channel, by day</li>
+          </ul>
+        </div>
+        <div class="a-sw__footer" data-reveal>
+          <p class="a-text-secondary">Savvy Software is the CRM and automation platform included with every Savvy Signature engagement. No add-on. No extra cost. Just how we work.</p>
+          <a class="a-btn a-btn--primary" href="https://savvysignatureindia.com/integrations/">Learn More <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <!-- S3 · Trust & proof -->
+      <section class="a-trust" aria-labelledby="a-trust-title">
+        <div class="a-trust__copy" data-reveal>
+          <h2 id="a-trust-title" class="a-display-m">Trusted by 50+ Brands <span class="a-text-accent">Across India &amp; Australia</span></h2>
+          <ul class="a-creds">
+            <li><span class="a-check" aria-hidden="true">✓</span>Google Partner</li>
+            <li><span class="a-check" aria-hidden="true">✓</span>Meta Business Partner</li>
+            <li><span class="a-check" aria-hidden="true">✓</span>Microsoft Certified</li>
+          </ul>
+        </div>
+        <div class="a-trust__proof" data-reveal>
+          <dl class="a-stats">
+            <div class="a-stat a-stat--inverse"><dt>Brands Grown</dt><dd data-count="50" data-suffix="+">50+</dd></div>
+            <div class="a-stat"><dt>Continents Served</dt><dd data-count="2">2</dd></div>
+            <div class="a-stat"><dt>Industries</dt><dd data-count="7" data-suffix="+">7+</dd></div>
+          </dl>
+          <ul class="a-clients logo-grid" aria-label="Clients">
+            <li><img src="/brand/clients/shree-mahalakshmi-sweets.png" alt="Shree Mahalakshmi Sweets" /></li>
+            <li><img src="/brand/clients/kikai-learn.png" alt="Kikai Learn" /></li>
+            <li><img src="/brand/clients/institute.png" alt="Institute" /></li>
+            <li><img src="/brand/clients/jcm-healthcare.png" alt="JCM Healthcare" /></li>
+            <li><img src="/brand/clients/linked-global.png" alt="Linked Global" /></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- =====================================================================
+       VARIANT B · EDITORIAL
+       ===================================================================== -->
+  <div class="variant variant-b" data-for="b">
+    <header class="b-nav" data-sticky>
+      <a class="b-brand" href="/" aria-label="Savvy Signature India, home">
+        <img class="brand-mark" src="/brand/s-mark.png" alt="" width="26" height="26" />
+        <span>Savvy Signature</span>
+      </a>
+      <nav class="b-nav__links" aria-label="Primary">
+        <a href="#" aria-current="page">Portfolio</a>
+        <a href="#">Leadership</a>
+        <a href="#">Digital</a>
+        <a href="#">Beyond Digital</a>
+        <a href="https://savvysignatureindia.com/integrations/">Savvy Software</a>
+        <a href="#">Industries</a>
+        <a href="#">Careers</a>
+      </nav>
+      <div class="b-nav__actions">
+        <a class="b-link b-health" href="#">Digital Health Check</a>
+        <a class="b-link b-hello" href="#">Say Hello</a>
+        <button class="b-menu-btn menu-toggle" type="button" aria-expanded="false" aria-controls="menu-sheet">Menu
+          <svg width="18" height="10" viewBox="0 0 18 10" aria-hidden="true"><path d="M0 1h18M0 9h18" stroke="currentColor" stroke-width="1.25"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="b-main">
+      <!-- S1 · Hero -->
+      <section class="b-hero" aria-labelledby="b-hero-title">
+        <div class="b-hero__bg" aria-hidden="true">
+          <div class="b-rays"><span></span><span></span><span></span></div>
+          <div class="b-rays b-rays--mirror"><span></span><span></span><span></span></div>
+          <div class="b-hero__fade"></div>
+          <div class="grain"></div>
+        </div>
+        <div class="b-hero__content">
+          <div class="b-hero__row">
+            <h1 id="b-hero-title" class="b-display">
+              <span class="b-line"><span class="b-hatch">We Don’t Just</span> Market Your</span>
+              <span class="b-line">Business.</span>
+              <span class="b-line">We <em>Grow It.</em></span>
+            </h1>
+            <p class="b-body-l b-hero__body">Built on Australian accountability standards. Deployed for India’s fastest-growing businesses. We connect your marketing spend <strong>directly to revenue</strong>, not impressions, not reports. <strong>Actual growth.</strong></p>
+          </div>
+          <div class="b-ctas">
+            <a class="b-btn b-btn--primary" href="#">Book your free growth audit</a>
+            <a class="b-btn b-btn--secondary" href="#b-software"><span aria-hidden="true">→</span> See how we work</a>
+          </div>
+        </div>
+      </section>
+
+      <ul class="b-strip logo-grid" aria-label="Partners and certifications">
+        <li><img src="/brand/partners/google-partner.png" alt="Google Partner" /></li>
+        <li><img src="/brand/partners/facebook-business-partner.png" alt="Facebook Business Partner" /></li>
+        <li><img src="/brand/partners/microsoft-certified.jpg" alt="Microsoft Certified" /></li>
+        <li><img src="/brand/partners/shopify-partner.png" alt="Shopify Partner" /></li>
+        <li><img src="/brand/partners/certified-marketing-expert.jpg" alt="Certified Marketing Expert" /></li>
+        <li><img src="/brand/clients/shree-mahalakshmi-sweets.png" alt="Shree Mahalakshmi Sweets" /></li>
+      </ul>
+
+      <!-- S2 · Savvy Software -->
+      <section id="b-software" class="b-software" aria-labelledby="b-sw-title">
+        <div class="b-sw__copy" data-reveal>
+          <span class="b-label">Savvy Software</span>
+          <h2 id="b-sw-title" class="b-heading">Savvy Software,<br />the <em>growth engine</em> every client gets</h2>
+          <p class="b-chip"><span class="b-chip__value">Included</span>with every Savvy Signature engagement</p>
+          <p class="b-body-l b-text-secondary">Most agencies give you a PDF report at the end of the month. We give you <strong>a live dashboard</strong> connected to your pipeline, WhatsApp follow-ups, ad spend, and revenue.</p>
+          <a class="b-btn b-btn--primary" href="https://savvysignatureindia.com/integrations/">Learn more</a>
+        </div>
+        <div class="b-stage" data-reveal>
+          <svg class="b-rings" viewBox="0 0 600 600" aria-hidden="true"></svg>
+          <span class="b-orbit b-orbit--coral" aria-hidden="true"></span>
+          <span class="b-orbit b-orbit--violet" aria-hidden="true"></span>
+          <span class="b-orbit b-orbit--amber" aria-hidden="true"></span>
+          <span class="b-orbit b-orbit--mint" aria-hidden="true"></span>
+          <div class="b-stage__card" data-dashboard></div>
+        </div>
+        <ul class="b-features" data-reveal>
+          <li class="b-feature" style="--g: var(--b-color-graphic-mint)"><span class="b-feature__top"><span class="b-feature__icon" data-icon="revenue"></span><span class="b-label">01</span></span><span class="b-feature__title">Live revenue attribution dashboard</span></li>
+          <li class="b-feature" style="--g: var(--b-color-graphic-violet)"><span class="b-feature__top"><span class="b-feature__icon" data-icon="whatsapp"></span><span class="b-label">02</span></span><span class="b-feature__title">WhatsApp automation (leads followed up in 90 seconds)</span></li>
+          <li class="b-feature" style="--g: var(--b-color-graphic-coral)"><span class="b-feature__top"><span class="b-feature__icon" data-icon="pipeline"></span><span class="b-label">03</span></span><span class="b-feature__title">CRM pipeline management</span></li>
+          <li class="b-feature" style="--g: var(--b-color-graphic-amber)"><span class="b-feature__top"><span class="b-feature__icon" data-icon="channels"></span><span class="b-label">04</span></span><span class="b-feature__title">Campaign performance by channel, by day</span></li>
+        </ul>
+        <p class="b-sw__footer">Savvy Software is the CRM and automation platform included with every Savvy Signature engagement. No add-on. No extra cost. Just how we work.</p>
+      </section>
+
+      <!-- S3 · Trust & proof -->
+      <section class="b-trust" aria-labelledby="b-trust-title">
+        <h2 id="b-trust-title" class="b-heading b-center" data-reveal>Trusted by 50+ Brands<br />Across <em>India &amp; Australia</em></h2>
+        <ul class="b-creds" data-reveal>
+          <li><span aria-hidden="true">✓</span> Google Partner</li>
+          <li><span aria-hidden="true">✓</span> Meta Business Partner</li>
+          <li><span aria-hidden="true">✓</span> Microsoft Certified</li>
+        </ul>
+        <dl class="b-stats" data-reveal>
+          <div style="--g: var(--b-color-graphic-mint)"><dd data-count="50" data-suffix="+">50+</dd><dt>Brands Grown</dt></div>
+          <div style="--g: var(--b-color-graphic-amber)"><dd data-count="2">2</dd><dt>Continents Served</dt></div>
+          <div style="--g: var(--b-color-graphic-coral)"><dd data-count="7" data-suffix="+">7+</dd><dt>Industries</dt></div>
+          <span class="grain" aria-hidden="true"></span>
+        </dl>
+        <ul class="b-clients logo-grid" aria-label="Clients" data-reveal>
+          <li><img src="/brand/clients/shree-mahalakshmi-sweets.png" alt="Shree Mahalakshmi Sweets" /></li>
+          <li><img src="/brand/clients/kikai-learn.png" alt="Kikai Learn" /></li>
+          <li><img src="/brand/clients/institute.png" alt="Institute" /></li>
+          <li><img src="/brand/clients/jcm-healthcare.png" alt="JCM Healthcare" /></li>
+          <li><img src="/brand/clients/linked-global.png" alt="Linked Global" /></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- Shared mobile / tablet menu sheet -->
+  <div id="menu-sheet" class="menu-sheet" hidden>
+    <div class="menu-sheet__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <button class="menu-sheet__close" type="button" aria-label="Close menu">×</button>
+      <nav aria-label="Mobile">
+        <a href="#" aria-current="page">Portfolio</a>
+        <a href="#">Leadership</a>
+        <a href="#">Digital</a>
+        <a href="#">Beyond Digital</a>
+        <a href="https://savvysignatureindia.com/integrations/">Savvy Software</a>
+        <a href="#">Industries</a>
+        <a href="#">Careers</a>
+        <a href="#">Digital Health Check</a>
+        <a href="#" class="menu-sheet__cta">Say Hello →</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Variant switch -->
+  <div class="variant-switch" role="radiogroup" aria-label="Design direction">
+    <button role="radio" data-set-variant="a"><span class="variant-switch__key">A</span>Growth Engine</button>
+    <button role="radio" data-set-variant="b"><span class="variant-switch__key">B</span>Editorial</button>
+  </div>
+</body>
+</html>
